@@ -1,0 +1,23 @@
+# Clash 配置示例，仅包含一个 HTTP 代理节点
+port: 7890
+socks-port: 7891
+allow-lan: false
+mode: global
+log-level: info
+
+proxies:
+  - name: "MyGostNode"
+    type: http
+    server: 45.66.191.187
+    port: 54522
+    username: 2d42bfbb
+    password: py5Bp26q
+
+proxy-groups:
+  - name: "Auto"
+    type: select
+    proxies:
+      - MyGostNode
+
+rules:
+  - MATCH,Auto
